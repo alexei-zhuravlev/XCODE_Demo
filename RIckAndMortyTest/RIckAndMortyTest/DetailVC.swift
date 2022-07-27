@@ -9,7 +9,13 @@ import UIKit
 
 class DetailVC: UIViewController {
     
-//    let shared = DetailVC()
+    var imageDataDVC:Data!
+    var nameTextDVC = ""
+    var ganderTextDVC = ""
+    var speciesTextDVC = ""
+    var statusTextDVC = ""
+    var locationTextDVC = ""
+    var episodesNumDVC = 0
     
     @IBOutlet weak var caracterAvatar: UIImageView!
     @IBOutlet weak var caracterName: UILabel!
@@ -22,19 +28,13 @@ class DetailVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        caracterName.text = "SOME TEXT"
+        
+        caracterAvatar.image = UIImage(data: imageDataDVC)
+        caracterName.text = "NAME: " + nameTextDVC
+        caracterSpecies.text = "SPECIES: " + speciesTextDVC
+        caracterGender.text = "GENDER: " + ganderTextDVC
+        caracterStatus.text = "STATUS: " + statusTextDVC
+        caracterLocation.text = "LOCATION: " + locationTextDVC
+        caracterEpisodes.text = "Caracter appeared in \(episodesNumDVC) episodes"
     }
-    
-//    func setParametersDetailVC(_ item: ResultResults, _ caracterImage:Data){
-//        caracterAvatar.image = UIImage(data: caracterImage)
-//        caracterName.text = item.name
-//        caracterSpecies.text = item.species
-//        caracterGender.text = item.gender
-//        caracterStatus.text = item.status
-//        caracterEpisodes.text = "\(item.episode.count)"
-//        caracterLocation.text = "Default Text"
-//        
-//        
-//    }
 }

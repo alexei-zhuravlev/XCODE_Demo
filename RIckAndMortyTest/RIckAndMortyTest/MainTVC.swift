@@ -17,7 +17,6 @@ class MainTVC: UITableViewController {
     
     var allCaracters:[ResultResults] = []
     var allCaractersImages:[Data] = []
-//    var tempCaracterImageData:Data = getDefaultImage()
     
     func getDefaultImage() -> Data{
         let result = try! Data(contentsOf: defaultUrl!)
@@ -68,61 +67,33 @@ class MainTVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-//        newsScreen(DetailVC(), indexPath: indexPath)
-        let currentCaracterVC = DetailVC()
         
         let item = allCaracters[indexPath.row]
-        print(item)
+        guard let carIm = allCaractersImages[indexPath.row] as? Data else {return}
 
-        let amountOfEpisodes = item.episode.count
-
-//        currentCaracterVC.caracterAvatar.image = UIImage(data: allCaractersImages[indexPath.row])
-//        currentCaracterVC.caracterName.text = "NAME: " + item.name
-//        currentCaracterVC.caracterSpecies.text = "SPECIES: " + item.species
-//        currentCaracterVC.caracterGender.text = "GENDER: " + item.gender
-//        currentCaracterVC.caracterStatus.text = "STATUS: " + item.status
-//        currentCaracterVC.caracterLocation.text = "LAST LOCATION: "
-//        currentCaracterVC.caracterEpisodes.text = "APPEARENCE IN \(amountOfEpisodes) EPISODES"
         
-//        currentCaracterVC.setParametersDetailVC(item, allCaractersImages[indexPath.row])
+        let nameText = item.name
+        let ganderText = item.gender
+        let speciesText = item.species
+        let statusText = item.status
+        let locationText = item.location["name"]!
+        let episodesNum = item.episode.count
         
-        navigationController?.present(currentCaracterVC, animated: true)
-        print("*************************")
-        print(item.location)
-        print(allCaractersImages[indexPath.row])
-    }
+        
+        guard let destination = storyboard?.instantiateViewController(withIdentifier: "DetailVC") as? DetailVC else {return}
+        
+        destination.imageDataDVC = carIm
+        destination.nameTextDVC = nameText
+        destination.ganderTextDVC = ganderText
+        destination.statusTextDVC = statusText
+        destination.speciesTextDVC = speciesText
+        destination.locationTextDVC = locationText
+        destination.episodesNumDVC = episodesNum
     
-//    func newsScreen(_ controller:UIViewController, indexPath: IndexPath){
-//        guard let controllerOne = controller as? DetailVC else {return}
-//        let controllerTwo = controllerOne.shared
-//        let item = allCaracters[indexPath.row]
-//        print(item)
-//
-//        let amountOfEpisodes = item.episode.count
-////
-////        controllerTwo.caracterAvatar.image = UIImage(data: allCaractersImages[indexPath.row])
-////        controllerTwo.caracterName.text = "NAME: " + item.name
-////        controllerTwo.caracterSpecies.text = "SPECIES: " + item.species
-////        controllerTwo.caracterGender.text = "GENDER: " + item.gender
-////        controllerTwo.caracterStatus.text = "STATUS: " + item.status
-////        controllerTwo.caracterLocation.text = "LAST LOCATION: "
-////        controllerTwo.caracterEpisodes.text = "APPEARENCE IN \(amountOfEpisodes) EPISODES"
-//
-//        navigationController?.present(controller, animated: true)
-////        present(controller, animated: true)
-//        print("*************************")
-//        print(item.location)
-//        print(allCaractersImages[indexPath.row])
-//
-//    }
-}
-
-extension MainTVC{
-    func configureNavigation(){
-        navigationController?.navigationBar.isHidden = false
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.navigationBar.topItem?.title = "RICK AND MORTY CARACTERS"
+        navigationController?.pushViewController(destination, animated: true)
+        
     }
 }
+
 
 

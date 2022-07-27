@@ -120,7 +120,7 @@ extension MainTVC{
         }
         groupeOne.notify(queue: .main){
             self.tableView.reloadData()
-            print("@@@@@@@@@@@@@@@@@@@@@@@@@")
+//            print("@@@@@@@@@@@@@@@@@@@@@@@@@")
 //            print("ВСЕГО персонажей - \(self.allCaracters.count)")
 //            print("ВСЕГО картинок - \(self.allCaractersImages.count)")
             print(self.allCaracters[1])
@@ -162,8 +162,8 @@ extension MainTVC{
 //            self.showAllImages()
 //        }
         queueTwo.async(group: groupeTwo, flags: .barrier) {
-            print("$$$$$$$$$$$$$$$$")
-            print(self.allCaractersImages.count)
+//            print("$$$$$$$$$$$$$$$$")
+//            print(self.allCaractersImages.count)
 //            self.showAllImages()
             DispatchQueue.main.async(flags: .barrier) {
                 self.tableView.reloadData()
