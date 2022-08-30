@@ -45,6 +45,7 @@
 		D4A5912D28B8E9B7007D7C0A /* ExtensionForMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionForMainVC.swift; sourceTree = "<group>"; };
 		D4A5912F28B8EDCD007D7C0A /* StorageForSearchingResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageForSearchingResults.swift; sourceTree = "<group>"; };
 		D4A5913128B8EE00007D7C0A /* SearchingInFlickr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchingInFlickr.swift; sourceTree = "<group>"; };
+		D4AF83D928BE53A100E1B78B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +88,7 @@
 				D4A5910128B8DE68007D7C0A /* SceneDelegate.swift */,
 				D4A5910828B8DE6A007D7C0A /* Assets.xcassets */,
 				D4A5910D28B8DE6A007D7C0A /* Info.plist */,
+				D4AF83D928BE53A100E1B78B /* README.md */,
 			);
 			path = FlickrFinalProject;
 			sourceTree = "<group>";
