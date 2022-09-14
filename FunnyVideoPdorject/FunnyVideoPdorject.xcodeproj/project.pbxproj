@@ -55,6 +55,7 @@
 		D463A03B28D0C1DA00A6384D = {
 			isa = PBXGroup;
 			children = (
+				D463A07028D231EA00A6384D /* README.md */,
 				D463A04628D0C1DA00A6384D /* FunnyVideoPdorject */,
 				D463A04528D0C1DA00A6384D /* Products */,
 			);
@@ -78,7 +79,6 @@
 				D463A04928D0C1DA00A6384D /* SceneDelegate.swift */,
 				D463A05028D0C1DC00A6384D /* Assets.xcassets */,
 				D463A05528D0C1DC00A6384D /* Info.plist */,
-				D463A07028D231EA00A6384D /* README.md */,
 			);
 			path = FunnyVideoPdorject;
 			sourceTree = "<group>";
