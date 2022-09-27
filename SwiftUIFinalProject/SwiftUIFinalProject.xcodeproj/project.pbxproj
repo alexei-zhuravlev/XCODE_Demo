@@ -40,6 +40,7 @@
 		D463A10F28E3108700A6384D = {
 			isa = PBXGroup;
 			children = (
+				D463A12D28E31EE100A6384D /* README.md */,
 				D463A11A28E3108800A6384D /* SwiftUIFinalProject */,
 				D463A11928E3108800A6384D /* Products */,
 			);
@@ -62,7 +63,6 @@
 				D463A12B28E3148600A6384D /* CatsDetailedScreenView.swift */,
 				D463A11F28E3108A00A6384D /* Assets.xcassets */,
 				D463A12128E3108A00A6384D /* Preview Content */,
-				D463A12D28E31EE100A6384D /* README.md */,
 			);
 			path = SwiftUIFinalProject;
 			sourceTree = "<group>";
